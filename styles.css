@@ -1,0 +1,616 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(228, 99%, 58%);
+  --light-blue: hsl(228, 100%, 60%);
+  --very-light-blue: hsl(220, 100%, 64%);
+  --light-white: hsl(224, 100%, 95%);
+  --white: hsl(0, 0%, 100%);
+  --scale: scaleY(0);
+}
+
+body {
+  background-color: var(--dark-blue);
+  color: white;
+  font-family: Inter, sans-serif;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.2rem;
+  border-bottom: 1.5px solid var(--very-light-blue);
+}
+
+/*logo*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--light-white);
+}
+
+.logo-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.navbar, .hero, .stat-card {
+  min-height: 20rem;
+ }
+
+
+/* ---------- Navigation ---------- */
+.navbar {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  background-color: var(--dark-blue);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.navbar.toggle-bar {
+  transform: translateX(0);
+}
+
+.navbar a {
+  width: 100%;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: var(--light-white);
+  text-decoration-line: underline;
+}
+
+/* ---------- Menu button ---------- */
+.menu-button {
+  border: 0;
+  background: transparent;
+  
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-button img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* ---------- Main Content ---------- */
+.main-content {
+  position: relative;
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: var(--scale);
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--very-light-blue);
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  font-weight: 480;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
+
+.hero p {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--light-white);
+  max-width: 45ch;
+}
+
+/* ---------- Statistics Section ---------- */
+.statistics {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.8rem 1.8rem;
+  border-bottom: 1px solid var(--very-light-blue);
+}
+
+.stat-card::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(71, 133, 255, 0.2);
+  transform: scaleY(0);
+}
+
+.stat-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* ---------- Card Header ---------- */
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-header img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+/* ---------- Card Content ---------- */
+.stat-content h2 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.stat-content p {
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--light-white);
+}
+
+/****** FOOTER ******/
+.site-footer {
+  position: relative;
+  padding: 1.6rem;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--light-white);
+}
+
+.site-footer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: var(--scale);
+}
+
+@media screen and (min-width: 481px) {
+  /* ---------- Header ---------- */
+
+  .site-header {
+    padding: 1.8rem 2rem;
+    border-bottom-width: 1.7px;
+  }
+  
+  /*logo*/
+  .logo {
+    gap: 0.35rem;
+    font-size: 1.1rem;
+  }
+
+  .logo-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  
+  .navbar, .hero, .stat-card {
+    min-height: 26rem;
+  }
+  
+  /*navbar*/
+  .navbar {
+    top: 5.8rem;
+    gap: 0.5rem;
+  }
+
+  .navbar a {
+    padding: 0.6rem 0;
+    font-size: 2rem;
+  }
+  
+  /* ---------- Menu button ---------- */
+  .menu-button img {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  /* ---------- Hero Section ---------- */
+  .hero {
+    padding: 0 2.2rem;
+    border-bottom-width: 1.2px;
+  }
+
+  .hero h1 {
+    font-size: 3.6rem;
+  }
+  
+  .hero p {
+    margin-top: 2rem;
+    font-size: 1.35rem;
+  }
+  
+  /* ---------- Statistics Section ---------- */
+  .stat-card {
+    padding: 2rem 2rem;
+    border-bottom-width: 1.2px;
+  }
+  
+  /* ---------- Card Header ---------- */
+  .stat-header img {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+  
+  .stat-number {
+    font-size: 2.7rem;
+  }
+  
+  /* ---------- Card Content ---------- */
+  .stat-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-content p {
+    font-size: 1rem;
+  }
+  
+  /****** FOOTER ******/
+  .site-footer {
+    padding: 1.8rem;
+    font-size: 1.05rem;
+    gap: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 661px) {
+  /* ---------- Header ---------- */
+  .site-header {
+    padding: 2.2rem 2.4rem;
+    border-bottom-width: 1.9px;
+  }
+  
+    /*logo*/
+  .logo {
+    gap: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .logo-dot {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+  
+    /* ---------- Menu button ---------- */
+  .menu-button img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .navbar, .hero, .stat-card {
+    min-height: 37rem;
+  }
+  
+    /*navbar*/
+  .navbar {
+    top: 7.2rem;
+    gap: 0.5rem;
+  }
+  
+  .navbar a {
+    padding: 0.8rem 0;
+    font-size: 3rem;
+  }
+  
+  /* ---------- Hero Section ---------- */
+  .hero {
+    padding: 0 3.2rem;
+    border-bottom-width: 1.4px;
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+  }
+  
+  .hero p {
+    margin-top: 2.5rem;
+    font-size: 1.9rem;
+  }
+  
+  /* ---------- Statistics Section ---------- */
+  .stat-card {
+    padding: 2.5rem 2.5rem;
+    border-bottom-width: 1.4px;
+  }
+  
+    /* ---------- Card Header ---------- */
+  .stat-header img {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  
+  .stat-number {
+    font-size: 3.6rem;
+  }
+  
+    /* ---------- Card Content ---------- */
+  .stat-content h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-content p {
+    font-size: 1.6rem;
+  }
+  
+    /****** FOOTER ******/
+  .site-footer {
+    padding: 2.4rem;
+    font-size: 1.6rem;
+    gap: 0.5rem;
+  }
+
+}
+
+@media screen and (min-width: 900px) {
+    /* ---------- Header ---------- */
+  .site-header {
+    padding: 3rem 3.2rem;
+    border-bottom-width: 2.4px;
+  }
+  
+    /*logo*/
+  .logo {
+    gap: 0.6rem;
+    font-size: 2.1rem;
+  }
+
+  .logo-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  /* ---------- Menu button ---------- */
+  .menu-button img {
+    width: 3.7rem;
+    height: 3.7rem;
+  }
+  
+  .navbar, .hero, .stat-card {
+    min-height: 50rem;
+  }
+  
+    /*navbar*/
+  .navbar {
+    top: 10rem;
+    gap: 0.5rem;
+  }
+  
+  .navbar a {
+    padding: 1rem 0;
+    font-size: 4.3rem;
+  }
+  
+  /* ---------- Hero Section ---------- */
+  .hero {
+    padding: 0 4rem;
+    border-bottom-width: 1.8px;
+  }
+  
+  .hero h1 {
+    font-size: 6.5rem;
+  }
+  
+  .hero p {
+    margin-top: 3.5rem;
+    font-size: 2.7rem;
+  }
+  
+  /* ---------- Statistics Section ---------- */
+  .stat-card {
+    padding: 3.5rem 3.5rem;
+    border-bottom-width: 1.8px;
+  }
+  
+  /* ---------- Card Header ---------- */
+  .stat-header img {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .stat-number {
+    font-size: 5rem;
+  }
+  
+    /* ---------- Card Content ---------- */
+  .stat-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-content p {
+    font-size: 2.1rem;
+  }
+      
+    /****** FOOTER ******/
+  .site-footer {
+    padding: 3rem;
+    font-size: 2rem;
+    gap: 0.7rem;
+  }
+}
+
+/* Desktop layout */
+@media screen and (min-width: 1400px) {
+  .site-header {
+    padding: 2.4rem 2.4rem;
+    border-bottom-width: 2px;
+  }
+  
+  .main-content {
+    height: 100%;
+
+  }
+  
+  /*logo*/
+  .logo {
+    gap: 0.6rem;
+    font-size: 1.3rem;
+  }
+  
+  .logo-dot {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  
+  /* ---------- Navigation ---------- */
+  .navbar {
+    top: 7.3rem;
+    right: 0;
+    width: 25vw;
+    height: 100vh;
+    padding: 4rem 0;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .navbar a {
+    text-align: right;
+    padding: 0.7rem 3rem;
+    font-size: 2rem;
+  }
+  
+  /* ---------- Menu button ---------- */
+  .menu-button img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* ---------- Hero Section ---------- */
+
+  .hero {
+    padding: 0 4rem;
+    border-bottom-width: 2px;
+    height: 100%;
+  }
+  
+  .hero h1 {
+    font-size: 5rem;
+    letter-spacing: -0.03em;
+    max-width: 10ch;
+  }
+
+  .hero p {
+    margin-top: 3.5rem;
+    font-size: 1.4rem;
+    max-width: 35ch;
+  }
+
+  .statistics {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* ---------- Statistics Section ---------- */
+  .stat-card {
+    min-height: 26rem;
+    padding: 2rem 2rem;
+  
+    border-bottom-width: 2px;
+    border-left: 2px solid var(--very-light-blue);
+  }
+  
+/* ---------- Card Header ---------- */
+  .stat-header img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  /* ---------- Card Content ---------- */
+  .stat-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-content p {
+    font-size: 0.9rem;
+  }
+  
+  /****** FOOTER ******/
+  .site-footer {
+    padding: 2.5rem;
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    transition: none;
+  }
+}
