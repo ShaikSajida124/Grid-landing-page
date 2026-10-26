@@ -4,7 +4,7 @@ A responsive landing page built as part of a Frontend Mentor challenge. This pro
 
 ## 🌐 Live Demo
 
-[View Live Site](YOUR_LIVE_SITE_URL)
+[View Live Site](https://shaiksajida124.github.io/Grid-landing-page/)
 
 ## 🛠️ Built With
 
@@ -37,11 +37,4 @@ While building this project, I practised:
 
 ## 🎯 Challenge
 
-This project was completed as part of a challenge from [Frontend Mentor](https://www.frontendmentor.io/).
-
-## 👩‍💻 Author
-
-**Your Name**
-
-- GitHub: [@YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
-- Frontend Mentor: [@YOUR_FRONTEND_MENTOR_USERNAME](https://www.frontendmentor.io/profile/YOUR_FRONTEND_MENTOR_USERNAME)
+This project was completed as part of a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/grid-landing-page).
